@@ -1,0 +1,85 @@
+MERGE `STONE-PASSAGE-247604.DATA_EV.EV_TBL` T
+        USING `STONE-PASSAGE-247604.STAGING_EV.STAGING_TBL` S
+        ON
+        T.UUID = S.UUID
+        AND T.CONNECTIONID = S.CONNECTIONID
+        WHEN MATCHED THEN
+        UPDATE SET
+            USAGECOST                 = S.USAGECOST,
+            NUMBEROFPOINTS            = S.NUMBEROFPOINTS,
+            STATUSTYPEID              = S.STATUSTYPEID,
+            ADDRESSINFOID             = S.ADDRESSINFOID,
+            TITLE                     = S.TITLE,
+            ADDRESSLINE1              = S.ADDRESSLINE1,
+            ADDRESSLINE2              = S.ADDRESSLINE2,
+            TOWN                      = S.TOWN,
+            STATEORPROVINCE           = S.STATEORPROVINCE,
+            POSTCODE                  = S.POSTCODE,
+            COUNTRYID                 = S.COUNTRYID,
+            LATITUDE                  = S.LATITUDE,
+            LONGITUDE                 = S.LONGITUDE,
+            DISTANCEUNIT              = S.DISTANCEUNIT,
+            POWERKW                   = S.POWERKW,
+            AMPS                      = S.AMPS,
+            VOLTAGE                   = S.VOLTAGE,
+            QUANTITY                  = S.QUANTITY,
+            LEVELID                   = S.LEVELID,
+            CONNECTIONTYPEID          = S.CONNECTIONTYPEID,
+            STATUSTYPEID_CONNECTION   = S.STATUSTYPEID_CONNECTION,
+            CURRENTTYPEID             = S.CURRENTTYPEID
+
+        WHEN NOT MATCHED THEN
+        INSERT (
+            ID,
+            UUID,
+            USAGECOST,
+            NUMBEROFPOINTS,
+            STATUSTYPEID,
+            ADDRESSINFOID,
+            TITLE,
+            ADDRESSLINE1,
+            ADDRESSLINE2,
+            TOWN,
+            STATEORPROVINCE,
+            POSTCODE,
+            COUNTRYID,
+            LATITUDE,
+            LONGITUDE,
+            DISTANCEUNIT,
+            CONNECTIONID,
+            POWERKW,
+            AMPS,
+            VOLTAGE,
+            QUANTITY,
+            LEVELID,
+            CONNECTIONTYPEID,
+            STATUSTYPEID_CONNECTION,
+            CURRENTTYPEID
+        )
+        VALUES (
+            S.ID,
+            S.UUID,
+            S.USAGECOST,
+            S.NUMBEROFPOINTS,
+            S.STATUSTYPEID,
+            S.ADDRESSINFOID,
+            S.TITLE,
+            S.ADDRESSLINE1,
+            S.ADDRESSLINE2,
+            S.TOWN,
+            S.STATEORPROVINCE,
+            S.POSTCODE,
+            S.COUNTRYID,
+            S.LATITUDE,
+            S.LONGITUDE,
+            S.DISTANCEUNIT,
+            S.CONNECTIONID,
+            S.POWERKW,
+            S.AMPS,
+            S.VOLTAGE,
+            S.QUANTITY,
+            S.LEVELID,
+            S.CONNECTIONTYPEID,
+            S.STATUSTYPEID_CONNECTION,
+            S.CURRENTTYPEID
+        );

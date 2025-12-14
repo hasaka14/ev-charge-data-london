@@ -1,0 +1,37 @@
+# -----------------------------
+# Python virtual environment
+# -----------------------------
+venv/
+.env/
+.env*/
+
+# -----------------------------
+# Service account credentials
+# -----------------------------
+service-account.json
+
+# -----------------------------
+# CSV files
+# -----------------------------
+*.csv
+
+# -----------------------------
+# Python cache files
+# -----------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# -----------------------------
+# OS / Editor files (optional but recommended)
+# -----------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# -----------------------------
+# Environment variable files
+# -----------------------------
+# .env
+# .env.*
