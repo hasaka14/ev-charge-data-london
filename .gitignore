@@ -21,6 +21,7 @@ service-account.json
 __pycache__/
 *.py[cod]
 *$py.class
+cache
 
 # -----------------------------
 # OS / Editor files (optional but recommended)
