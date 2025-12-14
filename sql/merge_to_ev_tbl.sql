@@ -1,5 +1,5 @@
-MERGE `STONE-PASSAGE-247604.DATA_EV.EV_TBL` T
-        USING `STONE-PASSAGE-247604.STAGING_EV.STAGING_TBL` S
+MERGE `stone-passage-247604.data_ev.ev_tbl` T
+        USING `stone-passage-247604.staging_ev.staging_tbl` S
         ON
         T.UUID = S.UUID
         AND T.CONNECTIONID = S.CONNECTIONID

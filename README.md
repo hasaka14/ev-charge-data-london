@@ -142,6 +142,7 @@ pip install -r requirements.txt
 project-root/
 └── service-account.json
 ```
+* create two datasets in BigQuery > data_ev,staging_ev
 
 ### 4. Config for OCM API Key in .env
 
